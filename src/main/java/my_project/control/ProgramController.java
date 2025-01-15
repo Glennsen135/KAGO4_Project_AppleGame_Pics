@@ -2,10 +2,7 @@ package my_project.control;
 
 import KAGO_framework.control.ViewController;
 import my_project.Config;
-import my_project.model.Apple;
-import my_project.model.Background;
-import my_project.model.Pear;
-import my_project.model.Player;
+import my_project.model.*;
 
 /**
  * Ein Objekt der Klasse ProgramController dient dazu das Programm zu steuern. Die updateProgram - Methode wird
@@ -18,6 +15,8 @@ public class ProgramController{
     // Referenzen
     private ViewController viewController;  // diese Referenz soll auf ein Objekt der Klasse viewController zeigen. Über dieses Objekt wird das Fenster gesteuert.
 
+    private Pumpkin pumpkin01;
+    private Melon melon01;
     private Apple apple01;
     private Pear pear01;
     private Player player01;
@@ -54,8 +53,21 @@ public class ProgramController{
         pear01 = new Pear(xPos, yPos, player01, this);
         viewController.draw(pear01);
 
+        xPos = Math.random()*(Config.WINDOW_WIDTH-50) + 50;
+        yPos = Math.random()*(Config.WINDOW_HEIGHT-50) + 50;
+        melon01 = new Melon(xPos, yPos, player01, this);
+        viewController.draw(melon01);
+
+        xPos = Math.random()*(Config.WINDOW_WIDTH-50) + 50;
+        yPos = Math.random()*(Config.WINDOW_HEIGHT-50) + 50;
+        pumpkin01 = new Pumpkin(xPos, yPos, player01, this);
+        viewController.draw(pumpkin01);
+
         player01.befriendApple(apple01);
         player01.befriendPear(pear01);
+        player01.befriendMelon(melon01);
+        player01.befriendPumpkin(pumpkin01);
+
     }
 
     /**

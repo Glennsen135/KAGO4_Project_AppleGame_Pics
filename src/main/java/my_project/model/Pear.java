@@ -21,18 +21,13 @@ public class Pear extends GraphicalObject {
         height = 50;
         this.player01 = player01;
         this.pc = pc;
+        this.setNewImage("src/main/resources/graphic/andrew.png");
     }
 
     @Override
     public void draw(DrawTool drawTool) {
-        drawTool.setCurrentColor(0,255,0,255);
-        drawTool.drawFilledRectangle(x,y+0.4*height,width,0.4*height);
-        drawTool.drawFilledPolygon(x+0.3*width,y, x,y+0.4*height, x+width,y+0.4*height, x+0.7*width,y);
-        drawTool.drawFilledPolygon(x,y+0.8*height, x+width,y+0.8*height, x+0.8*width,y+height, x+0.2*width,y+height);
+        drawTool.drawImage(this.getMyImage(),x,y);
 
-        drawTool.setCurrentColor(0,0,0,255);
-        drawTool.setLineWidth(3);
-        drawTool.drawLine(x+0.5*width,y,x+0.5*width,y-0.2*height);
 
         //drawTool.setCurrentColor(0,0,0,255);
         //drawTool.drawRectangle(x,y+0.5*height,width,0.5*height);

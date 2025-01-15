@@ -4,9 +4,7 @@ import KAGO_framework.model.GraphicalObject;
 import KAGO_framework.view.DrawTool;
 import my_project.control.ProgramController;
 
-import java.awt.*;
-
-public class Apple extends GraphicalObject {
+public class Pumpkin extends GraphicalObject {
 
     //Attribute
     private double speed;
@@ -15,7 +13,7 @@ public class Apple extends GraphicalObject {
     private Player player01;
     private ProgramController pc;
 
-    public Apple(double x, double y, Player player01, ProgramController pc){
+    public Pumpkin(double x, double y, Player player01, ProgramController pc){
         this.x = x;
         this.y = y;
         speed = 150;
